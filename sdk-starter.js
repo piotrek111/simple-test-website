@@ -43,4 +43,4 @@
 
     // run "init" step by default to apply new config structure
     tdconv('init', c);
-})({organization: '123', programId: '321', program: false, element: 'iframe'}, window, document);
+})({organization: '2467874', programId: '410895', program: false, element: 'iframe'}, window, document);

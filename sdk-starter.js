@@ -1,46 +1,57 @@
-/* Landing Page script */
-(function(c,w,v){
-    function getUrlParameter(name) {
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    };
-    function setCookie(name, value) {
-        var host = w.location.host;
-        var domain = host.substring(host.indexOf('.'));
-        if (domain.match(/\./g).length <2 || domain.substring(0, domain.indexOf('.', 1)) === '.co'){
-            // prepend dot
-            domain = '.' + host;
+!(function (e, n, t) {
+    function r(e) {
+        try {
+            return (
+                (function (e) {
+                    for (var n = "", t = new Uint8Array(e), r = 0; r < t.length; r += 1) n += String.fromCharCode(t[r]);
+                    return btoa(n).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+                })(new TextEncoder().encode(e).buffer) + ".b"
+            );
+        } catch (n) {
+            return e;
         }
-
-        var d = new Date();
-        var t = d.getTime() + (365 * 24 * 60 * 60 * 1000);
-        d.setTime(t);
-        v.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';domain=' + domain + ';path=/;sameSite=none;Secure=true';
-    };
-
-    // set tdclid_sn cookie
-    var m = 'tdclid_sn';
-    var n = getUrlParameter(m);
-    if (n){
-        setCookie(m, n);
     }
-
-    // the library's query string
-    var q = '?org=' + c.organization + '&prog=' + c.programId;
-
-    /* Load fallback library */
-    w.tdfallback = function(url){
-        var js, fjs = v.getElementsByTagName('script')[0];
-        js = v.createElement('script');
-        js.src = url + q;
-        fjs.parentNode.insertBefore(js, fjs);
-    };
-
-    var url = 'https://sdk.tdtest.net/sdk/tr-sdk-dp.js' + q + '&rand=';
-    (function(i,s,o,g,r,a,m){i['TDConversionObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script', url + Math.random(), 'tdconv');
-    //    (function(i,s,o,g,r,a,m){i['TDConversionObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script', 'https://sdk.tradedoubler.com/trsdk' + q, 'tdconv');
-
-    // run "init" step by default to apply new config structure
-    tdconv('init', c);
-})({organization: '2467874', programId: '410895', program: false, element: 'iframe'}, window, document);
+    var o = "tdclid_sn",
+        a = (function (e) {
+            var n = new RegExp("[\\?&]" + e + "=([^&#]*)").exec(location.search);
+            return null === n ? "" : decodeURIComponent(n[1].replace(/\+/g, " "));
+        })(o);
+    a &&
+    (function (e, r) {
+        var o = n.location.host,
+            a = o.substring(o.indexOf("."));
+        (a.match(/\./g).length < 2 || ".co" === a.substring(0, a.indexOf(".", 1))) && (a = "." + o);
+        var c = new Date();
+        c.setTime(c.getTime() + 31536e6),
+            (t.cookie =
+                e + "=" + r + ";expires=" + c.toUTCString() + ";domain=" + a + ";path=/;sameSite=none;Secure=true");
+    })(o, a);
+    var c,
+        i,
+        s = "?org=" + encodeURIComponent(e.organization) + "&prog=" + encodeURIComponent(e.programId);
+    (n.tdfallback = function (e) {
+        var n,
+            o = t.getElementsByTagName("script")[0],
+            a = r("trsdk" + s),
+            c = e.replace(/\/trsdk(?:\?.*)?$/i, "");
+        ((n = t.createElement("script")).src = c + "/" + a), o.parentNode.insertBefore(n, o);
+    }),
+        (i = "tdconv"),
+        ((c = n).TDConversionObject = i),
+        (c[i] =
+            c[i] ||
+            function () {
+                (c[i].q = c[i].q || []).push(arguments);
+            }),
+        (c[i].l = 1 * new Date());
+    var d,
+        g,
+        p,
+        m = r("trsdk" + s);
+    (d = "https://sdk.tradedoubler.com/" + m),
+        (g = t.getElementsByTagName("script")[0]),
+        ((p = t.createElement("script")).async = !0),
+        (p.src = d),
+        g.parentNode.insertBefore(p, g),
+        n.tdconv("init", e);
+})({ organization: "2467571", programId: "398574", program: false, element: "iframe" }, window, document);

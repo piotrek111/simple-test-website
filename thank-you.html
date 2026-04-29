@@ -4,6 +4,29 @@
     <title>Thank You</title>
 </head>
 <body>
+    <script>
+        var TDConversion = {
+            transactionId: 'piotrekk-test-web-' + Date.now(),
+            orderValue: '11',
+            currency: 'EUR',
+            event: 463112,
+            eventTime: '2026-04-28%2011:59:59',
+            validOn: '2026-04-29',
+            ttid: '',
+            trafficSource: 'testSource',
+            cdt: {
+                extId: '9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08',
+                extType: 0
+            },
+            // instead of products array, you may use reportInfo string
+            reportInfo: 'f1=ProductID&f2=NameProduct&f3=PriceProduct&f4=quantityordered'
+
+            // or basket string for a PLT transaction
+            // basket: 'basket(pr(i(AB453%2D435)n(Ipod%20Nano%202gb)gr(25)v(100)q(1))pr(i(AD455%2D425)n(IPhone%2016gb)gr(46)v(300)q(2)))'
+        };
+
+        tdconv('track', 'sale', TDConversion);
+    </script>
     <h1>Thank you for your purchase!</h1>
     <a href="index.html">Back to store</a>
     <script src="sdk-starter.js"></script>

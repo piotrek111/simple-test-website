@@ -4,6 +4,9 @@
     <title>Thank You</title>
 </head>
 <body>
+<script src="sdk-starter.js"></script>
+<h1>Thank you for your purchase!</h1>
+    <a href="index.html">Back to store</a>
     <script>
         var TDConversion = {
             transactionId: 'piotrekk-test-web-' + Date.now(),
@@ -24,11 +27,8 @@
             // or basket string for a PLT transaction
             // basket: 'basket(pr(i(AB453%2D435)n(Ipod%20Nano%202gb)gr(25)v(100)q(1))pr(i(AD455%2D425)n(IPhone%2016gb)gr(46)v(300)q(2)))'
         };
-
         tdconv('track', 'sale', TDConversion);
+        tdfallback('https://sdk.tdtest.net/sdk/tr-sdk-dp.js');
     </script>
-    <h1>Thank you for your purchase!</h1>
-    <a href="index.html">Back to store</a>
-    <script src="sdk-starter.js"></script>
 </body>
 </html>

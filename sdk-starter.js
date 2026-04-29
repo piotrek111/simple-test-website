@@ -47,8 +47,8 @@
     var d,
         g,
         p,
-        m = r("trsdk" + s);
-    (d = "https://sdk.tradedoubler.net/" + m),
+        m = r("tr-sdk-dp.js" + s);
+    (d = "https://sdk.tradedoubler.net/sdk/" + m),
         (g = t.getElementsByTagName("script")[0]),
         ((p = t.createElement("script")).async = !0),
         (p.src = d),

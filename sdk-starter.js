@@ -28,7 +28,7 @@
     })(o, a);
     var c,
         i,
-        s = "?org=" + encodeURIComponent(e.organization) + "&prog=" + encodeURIComponent(e.programId);
+        s = "?org=" + encodeURIComponent(e.organization) + "&prog=" + encodeURIComponent(e.programId) + "&debug=true";
     (n.tdfallback = function (e) {
         var n,
             o = t.getElementsByTagName("script")[0],

@@ -1,7 +1,7 @@
 !(function (e, n, t) {
     function r(e) {
         try {
-            if (1<2) return e; // Temp fix to disable encoding
+            //if (1<2) return e; // Temp fix to disable encoding, otherwise p=undefined in the /source request
             return (
                 (function (e) {
                     for (var n = "", t = new Uint8Array(e), r = 0; r < t.length; r += 1) n += String.fromCharCode(t[r]);

@@ -49,10 +49,10 @@
         g,
         p,
         m = r("trsdk" + s);
-    (d = "https://clk.tdtest.net/" + m),
+    (d = "https://sdk.tradedoubler.com/sdk/" + m),
         (g = t.getElementsByTagName("script")[0]),
         ((p = t.createElement("script")).async = !0),
         (p.src = d),
         g.parentNode.insertBefore(p, g),
         n.tdconv("init", e);
-})({ organization: "2467874", programId: "410895", program: false, element: "iframe" }, window, document);
+})({ organization: "2467571", programId: "398574", program: false, element: "iframe" }, window, document);

@@ -18,7 +18,10 @@
             orderValue: '11',
             currency: 'EUR',
             event: 463112,
-            eventTime: '2026-04-28%2011:59:59'
+            eventTime: '' + new Date()
+                .toISOString()
+                .slice(0, 19)
+                .replace('T', ' ')
         };
         tdconv('debug', 2);
         tdconv('cookie-consent', true);

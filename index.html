@@ -4,9 +4,20 @@
     <title>Start Page</title>
     <script>
         localStorage.setItem("tdEncDisabled", "true");
+        localStorage.setItem("tdcookieconsent", "true");
+        localStorage.setItem("tdtrackingconsent", "true");
     </script>
 </head>
 <body>
+    <fieldset id="consents">
+        <legend>Consent Settings</legend>
+        <div>
+            <input type="checkbox" id="tdtrackingconsent" value="Tracking Consent" checked>
+            <label for="tdtrackingconsent">Tracking Consent</label>
+            <input type="checkbox" id="tdcookieconsent" value="Cookie Consent" checked>
+            <label for="tdcookieconsent">Cookie Consent</label>
+        </div>
+    </fieldset>
     <h1>Welcome to the Test!!!</h1>
     <p>You can "simulate" navigation to the store via:</p>
     <ul>
@@ -14,4 +25,20 @@
         <li><a href="store.html?utm_source=piotrek111&utm_medium=autotest">https://piotrek111.github.io/simple-test-website/index.html?utm_source=piotrek111&utm_medium=autotest</a></li>
     </ul>
 </body>
+<script>
+    document.getElementById('consents').addEventListener('change', (event) => {
+        if (event.target.type !== 'checkbox') {
+            return;
+        }
+
+        localStorage.setItem(
+            event.target.id,
+            event.target.checked
+        );
+
+        console.log(
+            `Changing ${event.target.id} to: ${event.target.checked}`
+        );
+    });
+</script>
 </html>

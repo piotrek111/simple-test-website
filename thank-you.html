@@ -18,7 +18,7 @@
             orderValue: '11',
             currency: 'EUR',
             event: 463112,
-            eventTime: '' + new Date()
+            eventTime: '' + new Date(Date.now() - 24 * 60 * 60 * 1000) // make it one day before
                 .toISOString()
                 .slice(0, 19)
                 .replace('T', '%20')

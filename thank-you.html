@@ -24,7 +24,7 @@
                 .replace('T', '%20')
         };
         tdconv('debug', 2);
-        tdconv('cookie-consent', true);
+        tdconv('cookie-consent', localStorage.getItem('tdcookieconsent'));
         tdconv('track', 'sale', TDConversion);
         //tdfallback('https://sdk.tdtest.net/sdk/tr-sdk-dp.js');
     </script>
